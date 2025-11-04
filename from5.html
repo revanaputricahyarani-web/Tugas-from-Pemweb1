@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .form-container {
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      h1 {
+        font-size: 22px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        color: #333;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+      }
+
+      .input-pair {
+        display: flex;
+        gap: 15px;
+      }
+
+      .input-pair .form-group {
+        flex: 1;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      .section-heading {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px 10px;
+        margin-bottom: 15px;
+      }
+
+      .checkbox-group label {
+        font-weight: normal;
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .agreement {
+        display: flex;
+        align-items: flex-start;
+        font-size: 14px;
+        color: #555;
+        margin: 15px 0;
+      }
+
+      .agreement input {
+        margin-right: 10px;
+        margin-top: 2px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 style="text-align:center;"> Order Form </h1>
+      <form action="" method="post">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="John Doe"
+        />
+
+        <div class="input-pair">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john.doe@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+1 (555) 123-4567"
+              required
+            />
+          </div>
+        </div>
+
+        <h2 class="section-heading">Order Details</h2>
+        <div class="input-pair">
+          <div class="form-group">
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+              <option value="" disabled selected>Select a product</option>
+              <option value="baju">Kaos</option>u</option>
+              <option value="hoodie">hoodie</option>
+              <option value="kemeja">kemeja</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              placeholder="1"
+              required
+            />
+          </div>
+        </div>
+
+        <label>size</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="size" value="S">Small</label>
+          <label><input type="checkbox" name="size" value="M" />Large</label>
+          <label><input type="checkbox" name="size" value="L" />Medium</label>
+          <label><input type="checkbox" name="size" value="XL" />XL</label>
+        </div>
+        
+            <div>
+                <label>Color</label>
+                <div class="check">
+                    <div><input type="checkbox">Red</div>
+                    <div><input type="checkbox">Blue</div>
+                    <div><input type="checkbox">Green</div>
+                    <div><input type="checkbox">Black</div>
+                </div>
+
+        <label for="section-heading">Additional Comments</label>
+        <textarea
+          id="comments"
+          name="comments"
+          placeholder="Enter any additional comments of instrumentions"
+        ></textarea>
+
+        <h2 class="section-heading">Payment Details</h2>
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+          <option value="" disabled selected>Select a payment method</option>
+          <option value="credit_card">Kartu Kredit</option>
+          <option value="bank_transfer">Transfer Bank</option>
+          <option value="e_wallet">E-Wallet</option>
+        </select>
+
+        <div class="agreement">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms"
+            >I accept the terms and conditions</label
+          >
+        </div>
+
+        <button type="submit">Submit Order</button></button>
+      </form>
+    </div>
+  </body>
+</html>
